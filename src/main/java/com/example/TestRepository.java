@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TestRepository extends PagingAndSortingRepository<TestEntity, Long> {
 
-    @Query("select distinct 'a' as x from TestEntity")
+    @Query("select distinct 1 as x from TestEntity")
     Page<TestEntityProjection> queryUsingDistinctAndPage(Pageable pageable);
 
 }
