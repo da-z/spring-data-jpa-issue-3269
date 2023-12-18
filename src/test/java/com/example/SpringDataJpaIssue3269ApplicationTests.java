@@ -16,7 +16,7 @@ class SpringDataJpaIssue3269ApplicationTests {
     @DisplayName("should work fine")
     void test() {
 
-        // At 1:26 and token 'as', no viable alternative at input 'select count(distinct 'a' *as x) from TestEntity AS __' [select count(distinct 'a' as x) from TestEntity AS __]
+        // At 1:24 and token 'as', no viable alternative at input 'select count(distinct 1 *as x) from TestEntity AS __' [select count(distinct 1 as x) from TestEntity AS __]
         testRepository.queryUsingDistinctAndPage(Pageable.unpaged());
 
     }
